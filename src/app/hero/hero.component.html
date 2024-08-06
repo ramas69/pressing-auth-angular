@@ -1,0 +1,57 @@
+<main class="hero overlay">
+    <h1>Let's go make something nice together.</h1>
+  </main>
+  <footer>
+    <p>Now we don't need psudo elements, horray!</p>
+  </footer>
+
+  <style>
+    html {
+    color-scheme: dark light;
+  }
+  :root {
+    --bkg-img: url('https://perfectdailygrind.com/wp-content/uploads/2019/02/bussy-coffee-shop.jpg');
+    --bdr-size: .8rem;
+  }
+  * {
+    padding: 0;
+    margin: 0;
+  }
+  footer {
+    display: none;
+  }
+  .hero {
+    background-image: var(--bkg-img);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: calc(100svh - ( var(--bdr-size) * 2));
+    width: calc(100svw - ( var(--bdr-size) * 3));
+    display: grid;
+    place-items: center;
+  }
+  h1 {
+    color: white;
+    text-align: center;
+    font-size: 2.1rem;
+    text-shadow: .1rem .2rem gray;
+    box-shadow: 0 0 .5rem black;
+    background: rgba(40, 40, 40, .6);
+    padding: .5ch 2ch;
+    margin-bottom: 2ch;
+  }
+  /* Without removing the border sizing as seen in CSS resets, create a border-image, then give it a slice value of 1 to fully surround the content*/
+  .overlay {
+    border: .8rem solid;
+    border-radius: 3rem;
+  /*   border-image-source: linear-gradient(gray, black); */
+    border-image-source: linear-gradient(
+      rgba(70, 70, 70, .55), /* gray */
+      rgba(10, 10, 10, .55) /*black */
+    );
+  /*   border-image-source: linear-gradient( gray, black ); */
+  /*   border-image-slice: 1; */
+  /* fill in the empty space inside to cover the entire container   */
+    border-image-slice: fill 1;
+  /* Use a transparent gradient or border image to make a see-through overlay   */
+  }
+  </style>
